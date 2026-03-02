@@ -48,5 +48,31 @@ public class Biblioteca {
         return poscionLibre;
     }
 
+    /**
+     * Recibe y añade el libro no duplicado siempre que haya hueco
+     * @param libro libro recibido
+     * @return true si se ha añadido, false si no se ha podido añadir
+     */
+    public boolean añadirLibro(Libro libro){
+        boolean libroAñadido = false;
+        int posicionLibro;
 
+        //Comprobar si existe
+        if (findLibro(libro.getId()) == null){
+            posicionLibro = buscarPrimerHuecoLibre();
+            //Buscar Hueco
+                //si hay ->
+            if(posicionLibro >= 0){
+                //añadimos
+                //libroAñadido = true
+                catalogo[posicionLibro] = libro;
+                libroAñadido = true;
+            }
+                //no hay -> libroAñadido = false
+        }
+
+        return libroAñadido;
+    }
+
+    }
 }
