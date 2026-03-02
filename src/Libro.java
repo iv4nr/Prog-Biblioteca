@@ -61,7 +61,8 @@ public class Libro {
     }
 
     /**
-     * Actualiza el numero de paginas que tiene el libro. COmprueba que el nuemro recibido sea mayor que 0.
+     * Actualiza el numero de paginas que tiene el libro.
+     * Comprueba que el nuemro recibido sea mayor que 0.
      * @param numPaginas nueva cantidad de paginas
      * @return true si ha podido cambiarse, false si no ha podido
      */
