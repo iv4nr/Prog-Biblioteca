@@ -14,7 +14,7 @@ public class Biblioteca {
     /**
      * Busca el libro en el catalogo por id
      * @param id_libro id del libro buscado
-     * @return la posicion del libro
+     * @return la posicion del libro o null si no lo encuentra
      */
     public Libro findLibro(int id_libro){
         boolean seguirBuscando = true;
@@ -93,5 +93,24 @@ public class Biblioteca {
         }
         return libroEncontrado;
 
+    }
+
+    /**
+     * Actualiza el numero de paginas del libro con el id recibido
+     * @param id_Libro id del libro a actualizar
+     * @param numPaginas numero de paginas actualizadas
+     * @return true si puede cambiarlo, false si no puede
+     */
+    public boolean updateNumPaginas(int id_Libro, int numPaginas){
+        boolean numPaginasActualizado = false;
+        Libro libro;
+
+        libro = findLibro(id_Libro);
+
+        if (libro != null){
+            numPaginasActualizado = libro.updateNumPaginas(numPaginas);
+        }
+
+        return numPaginasActualizado;
     }
 }
