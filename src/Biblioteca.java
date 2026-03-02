@@ -74,4 +74,24 @@ public class Biblioteca {
         return libroAñadido;
     }
 
+    /**
+     * Recibe un id de un libro y lo borra
+     * @param id_libro Identificador del libro
+     * @return el libro eliminado o null en caso de no encontrarlo
+     */
+    public Libro eliminarLibro(int id_libro){
+        Libro libroEncontrado = null;
+        boolean seguirBuscando = true;
+
+        //Comprobamos que existe. Necesitamos la poscion y el libro
+        for(int i = 0; i < CANT_MAX_LIBROS && seguirBuscando; i++){
+            if (catalogo[i] != null && catalogo[i].getId() == id_libro){
+                libroEncontrado = catalogo[i]; // Guardamos el libro
+                catalogo[i] = null;            // vaciamos la poscicion
+                seguirBuscando = false;        // para que no sigua buscando
+            }
+        }
+        return libroEncontrado;
+
+    }
 }
